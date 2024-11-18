@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
@@ -12,7 +13,7 @@ const port = 3000;
 app.use(bodyParser.json());
 
 // MongoDB URI
-const mongoURI = "mongodb://localhost:27017/mydatabase";
+const mongoURI = process.env.MONGO_URI;
 
 mongoose
   .connect(mongoURI)
