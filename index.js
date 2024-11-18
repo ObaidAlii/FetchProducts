@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 const bodyParser = require("body-parser");
 const fs = require("fs");
 
@@ -8,6 +9,7 @@ const Product = require("./Product"); // Product model
 
 const app = express();
 const port = 3000;
+app.use(cors()); // Enable CORS for all origins
 
 // Middleware to parse JSON request bodies
 app.use(bodyParser.json());
